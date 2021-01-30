@@ -1,0 +1,21 @@
+{
+  "name": "vuepress-custom",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.7.1",
+    "vuepress": "^1.7.1",
+    "vuepress-plugin-table-of-contents": "^1.1.7",
+    "vuepress-plugin-zooming": "^1.1.8"
+  },
+  "dependencies": {
+    "async-validator": "^3.5.1",
+    "dayjs": "^1.9.7",
+    "element-ui": "^2.14.1"
+  }
+}
