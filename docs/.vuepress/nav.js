@@ -1,6 +1,6 @@
 module.exports = [
-  { text: 'Bar', link: '/bar/' },
   { text: 'React', link: '/react/'},
+  { text: 'Bar', link: '/bar/' },
   {
     text: 'Foo',
     items: [
