@@ -169,13 +169,15 @@ button:focus
 button:focus
   box-shadow: 0 0 0 2px rgba(24,144,255,.2);
 
-
 .re-part
-  // user-select none
+  position relative
+  z-index 1
+  transition border-color 0.3s
   background-color #fff
-  padding 20px
-  border .3em solid #e0dfcc
-  border-radius: 6px;
+  padding 20px 26px
+  border 1px solid #e0dfcc
+  &:hover
+    border-color $accentColor;
   > :first-child
     margin-top 0
   > :last-child
