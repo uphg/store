@@ -1,5 +1,5 @@
 module.exports = [
-  { text: 'React', link: '/react/'},
+  { text: 'React 教程', link: '/react/'},
   { text: 'Bar', link: '/bar/' },
   {
     text: 'Foo',

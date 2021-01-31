@@ -36,7 +36,7 @@ UI 组件有以下几个特征。
 
 下面就是一个 UI 组件的例子。
 
-```javascript
+```jsx
 const Title =
   value => <h1>{value}</h1>;
 ```
