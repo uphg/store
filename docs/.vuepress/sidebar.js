@@ -2,7 +2,15 @@ module.exports = {
   '/react/': [
     ['', '介绍'],
     {
+      title: 'React 教程',
+      collapsable: false,
+      children: [
+        'react-started'
+      ]
+    },
+    {
       title: 'Redux 入门教程（阮一峰）',
+      collapsable: false,
       children: [
         {
           title: '一、基本用法',
