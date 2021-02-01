@@ -224,7 +224,8 @@ input {
     transform: translateY(-50%);
     transition: fill 0.2s;
   }
-  &.acitve .search-icon {
+  &.acitve .search-icon,
+  &:hover .search-icon  {
     fill: $accentColor;
   }
   input {
