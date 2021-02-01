@@ -68,7 +68,7 @@ $defaultLinkColor = #333333;
 
 .re-page-index {
   margin-top: 2rem;
-  border: 1px solid $pageTopBorder;
+  border: 1px solid $borderColor;
   position: relative;
   z-index: 1;
   background-color: $pageTopBgColor;

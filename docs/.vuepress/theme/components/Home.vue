@@ -98,8 +98,11 @@ export default {
       margin 3rem auto 1.5rem
     h1
       font-size 3rem
-    h1, .description, .action
+    h1, .description
       margin 1.8rem auto
+    .action
+      // margin 1.8rem auto
+      margin 3.6rem auto
     .description
       max-width 35rem
       font-size 1.6rem
@@ -121,25 +124,25 @@ export default {
       &::after
         content ""
         position absolute
-        width 10px
-        height 10px
+        width 20px
+        height 20px
         transition width 0.3s, height 0.3s;
       &::before
-        top -5px
-        left -5px
+        top -10px
+        left -10px
         border-top 2px solid $accentColor
         border-left 2px solid $accentColor
       &::after
-        right -5px
-        bottom -5px
+        right -10px
+        bottom -10px
         border-bottom 2px solid $accentColor
         border-right 2px solid $accentColor
       // &:hover
       //   background-color lighten($accentColor, 10%)
       &:hover::before,
       &:hover::after
-        width calc(100% + 8px)
-        height calc(100% + 8px)
+        width calc(100% + 18px)
+        height calc(100% + 18px)
       
   .features
     border-top 1px solid $borderColor
