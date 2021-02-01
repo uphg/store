@@ -57,7 +57,7 @@ export default {
 
 .el-scrollbar__view {
   & > .sidebar-links {
-    padding: 1.5rem 0;
+    padding: 1.5rem + $navbarHeight 0 1.5rem;
 
     & > li > a.sidebar-link {
       font-size: 1.1em;

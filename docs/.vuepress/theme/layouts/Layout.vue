@@ -6,6 +6,7 @@
     @touchend="onTouchEnd"
   >
     <Navbar
+      :class="[navClass]"
       v-if="shouldShowNavbar"
       @toggle-sidebar="toggleSidebar"
     />
@@ -62,7 +63,12 @@ export default {
 
   data () {
     return {
-      isSidebarOpen: false
+      isSidebarOpen: false,
+      navClass: '', // 导航栏滚动附加class
+      scroll: {     // 存储window滚动变量
+        before: 0,
+        current: 0,
+      }
     }
   },
 
@@ -119,7 +125,7 @@ export default {
     this.$router.afterEach(() => {
       this.isSidebarOpen = false
     })
-
+    this.initNav()
     this.scrollTo(location.hash)
   },
 
@@ -156,7 +162,54 @@ export default {
       if (el && el.offsetTop) {
         window.scrollTo(0, el.offsetTop)
       }
+    },
+
+    // 监听 window 窗口滚动事件
+    initNav() {
+      window.addEventListener('scroll', this.windowScroll)
+    },
+
+    // 窗口滚动时执行函数
+    windowScroll() {
+      let searchInput = document.querySelector(".search-box input[aria-label='Search']")
+      // 判断input搜索框是否获得焦点，获得焦点不滚动
+      if (document.activeElement !== searchInput) {
+        this.scrollDirection()
+      }
+    },
+
+    // 判断滚动方向
+    scrollDirection() {
+      // let {before, current} = this.scroll
+      this.scroll.current = document.documentElement.scrollTop || document.body.srcollTop;
+      if (this.scroll.before < this.scroll.current) {
+        this.addDownNavClass()
+      } else {
+        this.addUpNavClass()
+      }
+      this.scroll.before = this.scroll.current
+    },
+    // 向上滚动
+    addUpNavClass() {
+      this.navClass = 'nav-up'
+    },
+    // 向下滚动
+    addDownNavClass() {
+      this.navClass = 'nav-down'
     }
   }
 }
 </script>
+<style lang="stylus">
+// 导航栏向下滚动
+.nav-down {
+  transition: top 0.3s;
+  top: -3.6rem;
+}
+
+// 导航栏向上滚动
+.nav-up {
+  transition: top 0.3s;
+  top: 0;
+}
+</style>
