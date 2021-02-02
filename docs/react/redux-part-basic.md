@@ -176,7 +176,7 @@ store.dispatch({
 store.dispatch(addTodo('Learn Redux'));
 ```
 
-## 3.6 Reducer
+### 3.6 Reducer
 
 Store 收到 Action 以后，必须给出一个新的 State，这样 View 才会发生变化。这种 State 的计算过程就叫做 Reducer。
 
@@ -541,7 +541,7 @@ Redux 的基本用法就介绍到这里，[下一次](http://www.ruanyifeng.com/
 
 （完）
 
-## 文档信息
+<h2>文档信息</h2>
 
-- 版权声明：自由转载-非商用-非衍生-保持署名（[创意共享3.0许可证](http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh)）
-- 发表日期： 2016年9月18日
+> - 原文地址：[Redux 入门教程（一）：基本用法](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html)
+> - 发表日期：2016年9月18日

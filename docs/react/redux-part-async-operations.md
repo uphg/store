@@ -312,7 +312,7 @@ export default function promiseMiddleware({ dispatch }) {
 
 （完）
 
-## 文档信息
+<h2>文档信息</h2>
 
-- 版权声明：自由转载-非商用-非衍生-保持署名（[创意共享3.0许可证](http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh)）
-- 发表日期： 2016年9月20日
+> - 原文地址：[Redux 入门教程（二）：中间件与异步操作](https://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_two_async_operations.html)
+> - 发表日期：2016年9月20日

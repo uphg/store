@@ -27,42 +27,14 @@ module.exports = {
       ]
     }
   ],
-  '/bar/': [
+  '/devbook/': [
     ['', '介绍'],
     {
-      title: 'Bar',
-      children: [
-        'markdown',
-        'demo1.md',
-        'demo2.md',
-        'demo3.md',
-        'demo4.md',
-        'demo5.md',
-        'one',
-        'two'
-      ]
-    }
-  ],
-  '/foo/api/': [
-    ['', '介绍'],
-    {
-      title: 'Bar',
+      title: 'CSS 教程',
       collapsable: false,
       children: [
-        'one',
-        'two'
+        'css-modules',
       ]
     }
-  ],
-  '/foo/more/': [
-    ['', '介绍'],
-    {
-      title: 'Bar',
-      collapsable: false,
-      children: [
-        'one',
-        'two'
-      ]
-    }
-  ],
+  ]
 }

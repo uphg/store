@@ -583,7 +583,7 @@ var RepoList = React.createClass({
 
 （完）
 
-### 文档信息
+<h2>文档信息</h2>
 
-- 版权声明：自由转载-非商用-非衍生-保持署名（[创意共享3.0许可证](http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh)）
-- 发表日期： 2015年3月31日
+> - 原文地址：[React 入门实例教程](https://www.ruanyifeng.com/blog/2015/03/react.html)
+> - 发表日期：2015年3月31日

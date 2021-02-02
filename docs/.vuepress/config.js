@@ -4,7 +4,7 @@ var sidebar = require("./sidebar")
 module.exports = {
   base: '/store/',
   title: 'Store Note',
-  description: '分享/转载，我收集的一些前端的博客、教程等。',
+  description: '分享/转载，我收集的一些前端的博客、教程等（内容大部分为转载）。',
   head: [
     ['link', { href: 'https://fonts.googleapis.com/css?family=Inter:300,400,500,600|Open+Sans:400,600;display=swap', rel: 'stylesheet' }],
     /* 本地备份字体 */

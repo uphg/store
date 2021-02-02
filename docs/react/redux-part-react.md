@@ -87,7 +87,7 @@ const VisibleTodoList = connect(
 
 上面代码中，`connect`方法接受两个参数：`mapStateToProps`和`mapDispatchToProps`。它们定义了 UI 组件的业务逻辑。前者负责输入逻辑，即将`state`映射到 UI 组件的参数（`props`），后者负责输出逻辑，即将用户对 UI 组件的操作映射成 Action。
 
-### 四、mapStateToProps()
+## 四、mapStateToProps()
 
 `mapStateToProps`是一个函数。它的作用就是像它的名字那样，建立一个从（外部的）`state`对象到（UI 组件的）`props`对象的映射关系。
 
@@ -353,7 +353,7 @@ const Root = ({ store }) => (
 
 （完）
 
-### 文档信息
+<h2>文档信息</h2>
 
-- 版权声明：自由转载-非商用-非衍生-保持署名（[创意共享3.0许可证](http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh)）
-- 发表日期： 2016年9月21日
+> - 原文地址：[Redux 入门教程（三）：React-Redux 的用法](https://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_three_react-redux.html)
+> - 发表日期：2016年9月21日
