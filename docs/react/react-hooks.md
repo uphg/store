@@ -193,6 +193,70 @@ const Messages = () => {
 }
 ```
 
+<section class="re-part">
+  <div class="react-hooks-navbar">
+    <p>AwesomeSite</p>
+    <p>superawesome</p>
+  </div>
+  <div class="react-hooks-messages">
+    <h1>Messages</h1>
+    <p>1 message for </p>
+    <p class="react-hooks-message">useContext is awesome!</p>
+  </div>
+</section>
+
+> 点击查看[运行结果](https://codesandbox.io/s/react-usecontext-redux-0bj1v)
+
+## 六、useReducer()：action 钩子
+
+React 本身不提供状态管理功能，通常需要使用外部库。这方面最常用的库是 Redux。
+
+Redux 的核心概念是，组件发出 action 与状态管理器通信。状态管理器收到 action 以后，使用 Reducer 函数算出新的状态，Reducer 函数的形式是`(state, action) => newState`。
+
+`useReducers()`钩子用来引入 Reducer 功能。
+
+```jsx
+const [state, dispatch] = useReducer(reducer, initialState);
+```
+
+上面是`useReducer()`的基本用法，它接受 Reducer 函数和状态的初始值作为参数，返回一个数组。数组的第一个成员是状态的当前值，第二个成员是发送 action 的`dispatch`函数。
+
+下面是一个计数器的例子。用于计算状态的 Reducer 函数如下。
+
+```jsx
+const myReducer = (state, action) => {
+  switch(action.type)  {
+    case('countUp'):
+      return  {
+        ...state,
+        count: state.count + 1
+      }
+    default:
+      return  state;
+  }
+}
+```
+
+组件代码如下。
+
+```jsx
+function App() {
+  const [state, dispatch] = useReducer(myReducer, { count:   0 });
+  return  (
+    <div className="App">
+      <button onClick={() => dispatch({ type: 'countUp' })}>
+        +1
+      </button>
+      <p>Count: {state.count}</p>
+    </div>
+  );
+}
+```
+
+> 点击查看[运行结果](https://codesandbox.io/s/react-usereducer-redux-xqlet)
+
+
+
 <script>
 export default {
   data() {
@@ -203,3 +267,30 @@ export default {
   }
 }
 </script>
+
+<style>
+.react-hooks-navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+}
+.react-hooks-navbar p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.react-hooks-messages p {
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.react-hooks-message {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 4px;
+}
+</style>
