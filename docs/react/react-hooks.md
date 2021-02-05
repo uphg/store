@@ -241,7 +241,7 @@ const myReducer = (state, action) => {
 
 ```jsx
 function App() {
-  const [state, dispatch] = useReducer(myReducer, { count:   0 });
+  const [state, dispatch] = useReducer(myReducer, { count: 0 });
   return  (
     <div className="App">
       <button onClick={() => dispatch({ type: 'countUp' })}>
@@ -253,16 +253,170 @@ function App() {
 }
 ```
 
+<section class="re-part">
+  <button @click="reactDemo3 += 1">+1</button>
+  <p>Count: {{reactDemo3}}</p>
+</section>
+
 > 点击查看[运行结果](https://codesandbox.io/s/react-usereducer-redux-xqlet)
 
+由于 Hooks 可以提供共享状态和 Reducer 函数，所以它在这些方面可以取代 Redux。但是，它没法提供中间件（middleware）和时间旅行（time travel），如果你需要这两个功能，还是要用 Redux。
 
+## 七、useEffect()：副作用钩子
+
+`useEffect()`用来引入具有副作用的操作，最常见的就是向服务器请求数据。以前，放在`componentDidMount`里面的代码，现在可以放在`useEffect()`。
+
+`useEffect()`的用法如下。
+
+```jsx
+useEffect(()  =>  {
+  // Async Action
+}, [dependencies])
+```
+
+上面用法中，`useEffect()`接受两个参数。第一个参数是一个函数，异步操作的代码放在里面。第二个参数是一个数组，用于给出 Effect 的依赖项，只要这个数组发生变化，`useEffect()`就会执行。第二个参数可以省略，这时每次组件渲染时，就会执行`useEffect()`。
+
+下面看一个例子。
+
+```jsx
+const Person = ({ personId }) => {
+  const [loading, setLoading] = useState(true);
+  const [person, setPerson] = useState({});
+
+  useEffect(() => {
+    setLoading(true); 
+    fetch(`https://swapi.co/api/people/${personId}/`)
+      .then(response => response.json())
+      .then(data => {
+        setPerson(data);
+        setLoading(false);
+      });
+  }, [personId])
+
+  if (loading === true) {
+    return <p>Loading ...</p>
+  }
+
+  return <div>
+    <p>You're viewing: {person.name}</p>
+    <p>Height: {person.height}</p>
+    <p>Mass: {person.mass}</p>
+  </div>
+}
+```
+
+上面代码中，每当组件参数`personId`发生变化，`useEffect()`就会执行。组件第一次渲染时，`useEffect()`也会执行。
+
+<section class="re-part">
+  <p class="useEffect-height" v-if="useEffectLoading">Loading ...</p>
+  <div v-else class="useEffect-height useEffect-person">
+    <p>You're viewing: {{person.name}}</p>
+    <p>Height: {{person.height}}</p>
+    <p>Mass: {{person.mass}}</p>
+  </div>
+  <div>
+    显示：
+    <button @click="setUseEffect('0')">Jack</button>
+    <button @click="setUseEffect('1')">Brave</button>
+  </div>
+</section>
+
+> 点击查看[运行结果](https://codesandbox.io/s/react-useeffect-redux-9t3bg)
+
+## 八、创建自己的 Hooks
+
+上例的 Hooks 代码还可以封装起来，变成一个自定义的 Hook，便于共享。
+
+```jsx
+const usePerson = (personId) => {
+  const [loading, setLoading] = useState(true);
+  const [person, setPerson] = useState({});
+  useEffect(() => {
+    setLoading(true);
+    fetch(`https://swapi.co/api/people/${personId}/`)
+      .then(response => response.json())
+      .then(data => {
+        setPerson(data);
+        setLoading(false);
+      });
+  }, [personId]);  
+  return [loading, person];
+};
+```
+
+上面代码中，`usePerson()`就是一个自定义的 Hook。
+
+Person 组件就改用这个新的钩子，引入封装的逻辑。
+
+```jsx
+const Person = ({ personId }) => {
+  const [loading, person] = usePerson(personId);
+
+  if (loading === true) {
+    return <p>Loading ...</p>;
+  }
+
+  return (
+    <div>
+      <p>You're viewing: {person.name}</p>
+      <p>Height: {person.height}</p>
+      <p>Mass: {person.mass}</p>
+    </div>
+  );
+};
+```
+
+> 点击查看[运行结果](https://codesandbox.io/s/react-useeffect-redux-ghl7c)
+
+## 九、参考链接
+
+- [Can You Replace Redux with React Hooks?](https://chrisachard.com/replace-redux-with-react-hooks), Chris Achard
+- [Why React Hooks?](https://tylermcginnis.com/why-react-hooks/), Tyler McGinnis
+- [React Hooks Tutorial for Beginners](https://www.valentinog.com/blog/hooks/), Valentino Gagliardi
+
+（完）
+
+<h2>文档信息</h2>
+
+- 原文地址：[React Hooks 入门教程](http://www.ruanyifeng.com/blog/2019/09/react-hooks.html)
+- 发表日期：2019年9月1日
 
 <script>
 export default {
   data() {
     return {
       reactDemo1: 'Click me, please',
-      reactDemo2: 'Click me, please'
+      reactDemo2: 'Click me, please',
+      reactDemo3: 0,
+      person: {
+        name: 'Jack',
+        height: '1.8m',
+        mass: '55'
+      },
+      useEffectLoading: false,
+      useEffectHash: [
+        {
+          name: 'Jack',
+          height: '1.8m',
+          mass: '55'
+        },
+        {
+          name: 'Brave',
+          height: '2m',
+          mass: '99'
+        }
+      ]
+    }
+  },
+  methods: {
+    setUseEffect(key) {
+      this.useEffectLoading = true
+      let timerId = setTimeout(() => {
+        const { name, height, mass } = this.useEffectHash[key]
+        this.person = { name, height, mass }
+        this.useEffectLoading = false
+        window.clearTimeout(timerId)
+      }, 500)
     }
   }
 }
@@ -292,5 +446,16 @@ export default {
   border: 1px solid #ddd;
   padding: 10px;
   border-radius: 4px;
+}
+.useEffect-person > p {
+  line-height: 1.7;
+}
+.useEffect-person > p:first-child {
+  margin-top: 0;
+}
+.useEffect-height {
+  min-height: 130px;
+  border: 0.1px solid transparent;
+  margin-bottom: 0;
 }
 </style>
