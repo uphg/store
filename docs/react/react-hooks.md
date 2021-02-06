@@ -3,7 +3,7 @@ title: React Hooks 入门教程
 date: 2021-02-05T09:09:50+08:00
 categories: 前端
 tags:
-  - Redux
+  - React
   - 阮一峰
 ---
 
@@ -422,7 +422,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .react-hooks-navbar {
   display: flex;
   flex-direction: row;

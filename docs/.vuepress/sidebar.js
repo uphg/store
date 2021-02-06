@@ -2,15 +2,20 @@ module.exports = {
   '/react/': [
     ['', '介绍'],
     {
-      title: 'React 教程',
+      title: 'React 入门教程',
       collapsable: false,
       children: [
         'react-started',
         'react-hooks',
+        {
+          title: 'React 钩子：useEffect()',
+          path: 'react-hooks-useeffect'
+        },
+        'react-router',
       ]
     },
     {
-      title: 'Redux 入门教程（阮一峰）',
+      title: 'Redux 入门教程',
       collapsable: false,
       children: [
         {
