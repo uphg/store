@@ -15,5 +15,7 @@ actionLink: /bar/
 footer: MIT Licensed | Copyright © 2018-present Evan You
 ---
 
+> 注：标注为（旧）的博客表示已过时，可忽略。
+
 <!-- <button>Default Button</button>
 <button>我是按钮</button> -->
