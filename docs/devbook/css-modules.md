@@ -60,7 +60,7 @@ CSS的规则都是全局的，任何一个组件的样式规则，都对整个�
 
 下面是一个React组件[`App.js`](https://github.com/ruanyf/css-modules-demos/blob/master/demo01/components/App.js)。
 
-```javascript
+```jsx
 import React from 'react';
 import style from './App.css';
 
@@ -157,7 +157,7 @@ CSS Modules 允许使用`:global(.className)`的语法，声明一个全局规�
 
 [`App.js`](https://github.com/ruanyf/css-modules-demos/blob/master/demo02/components/App.css)使用普通的`class`的写法，就会引用全局`class`。
 
-```javascript
+```jsx
 import React from 'react';
 import styles from './App.css';
 
@@ -235,7 +235,7 @@ $ npm run demo03
 
 [`App.js`](https://github.com/ruanyf/css-modules-demos/blob/master/demo04/components/App.js)不用修改。
 
-```javascript
+```jsx
 import React from 'react';
 import style from './App.css';
 

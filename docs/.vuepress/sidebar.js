@@ -5,6 +5,7 @@ module.exports = {
       title: 'React 入门教程',
       collapsable: false,
       children: [
+        'react-technology-stack',
         'react-started',
         'react-hooks',
         {

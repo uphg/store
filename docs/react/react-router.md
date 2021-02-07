@@ -529,7 +529,7 @@ const Home = withRouter(
 
 （完）
 
-### 文档信息
+<h2>文档信息</h2>
 
-- 版权声明：自由转载-非商用-非衍生-保持署名（[创意共享3.0许可证](http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh)）
-- 发表日期： 2016年5月25日
+> - 原文地址：[React Router 使用教程](http://www.ruanyifeng.com/blog/2016/05/react_router.html)
+> - 发表日期：2016年5月25日

@@ -378,8 +378,8 @@ const Person = ({ personId }) => {
 
 <h2>文档信息</h2>
 
-- 原文地址：[React Hooks 入门教程](http://www.ruanyifeng.com/blog/2019/09/react-hooks.html)
-- 发表日期：2019年9月1日
+> - 原文地址：[React Hooks 入门教程](http://www.ruanyifeng.com/blog/2019/09/react-hooks.html)
+> - 发表日期：2019年9月1日
 
 <script>
 export default {
