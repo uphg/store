@@ -71,6 +71,24 @@ export default {
   }
 }
 
+// .el-scrollbar__view > .sidebar-links > li > a {
+//   white-space: nowrap;
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+// }
+// .el-scrollbar__view > .sidebar-links > li
+
+.el-scrollbar__view > .sidebar-links > li > .sidebar-group > .sidebar-links > li {
+  display: flex;
+}
+
+.el-scrollbar__view > .sidebar-links > li > .sidebar-group > .sidebar-links > li > a,
+.el-scrollbar__view > .sidebar-links > li > .sidebar-group > .sidebar-heading > span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 @media (max-width: $MQMobile) {
   .sidebar {
     .nav-links {

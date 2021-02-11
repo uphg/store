@@ -1,5 +1,5 @@
-var nav = require("./nav")
-var sidebar = require("./sidebar")
+const nav = require("./nav")
+const sidebar = require("./sidebar/index.js")
 
 module.exports = {
   base: '/store/',
