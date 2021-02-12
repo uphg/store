@@ -3,5 +3,6 @@ const react = require("./react")
 
 module.exports = {
   '/devbook/': devbook,
-  '/react/':  react
+  '/react/':  react,
+  '/bookmarks/': ['']
 }

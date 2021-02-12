@@ -1,4 +1,5 @@
 module.exports = [
+  { text: '收藏夹', link: '/bookmarks/'},
   { text: '开发者手册', link: '/devbook/'},
   { text: 'React 教程', link: '/react/'},
   // { text: 'Bar', link: '/bar/' },

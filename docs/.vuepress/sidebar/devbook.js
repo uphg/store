@@ -7,5 +7,5 @@ module.exports = [
       'css-cookbook',
       'css-modules',
     ]
-  }
+  },
 ]
