@@ -17,3 +17,5 @@ jspm_packages/
 
 # 禁止提交dist
 /docs/.vuepress/dist
+
+.idea
