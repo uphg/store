@@ -5,6 +5,7 @@ title: "收藏夹"
 ## 正则表达式
 
 - [正则表达式30分钟入门教程](https://deerchao.cn/tutorials/regex/regex.htm)
+- [在线 JavaScript 正则验证器](https://deerchao.cn/tools/wegester/)
 - [常用正则表达式](https://deerchao.cn/tutorials/regex/common.htm)
 
 ## JavaScript
