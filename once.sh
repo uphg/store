@@ -1,17 +1,20 @@
 # 第一次关联两个仓库
-echo -e "\n== init =="
+echo -e "\nGit init"
 git init
+echo -e "Git add"
 git add .
+echo -e "Git commit"
 git commit -m "first commit"
-echo -e "== init end ==\n"
+echo -e "\n"
 
+echo -e "Git remote GitHub"
 git remote add github git@github.com:uphg/store.git
+echo -e "Git remote Gitee"
 git remote add gitee git@gitee.com:uphg/store.git
+echo -e "\n"
 
-echo "== push Github =="
+echo "Git push Github =="
 git push github master:master
-echo -e "== push Github end ==\n"
-
-echo "== push Gitee =="
+echo "Git push Gitee =="
 git push gitee master:master
-echo -e "== push Gitee end ==\n"
+echo -e "\n"

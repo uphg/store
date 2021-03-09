@@ -4,15 +4,13 @@ else
 parame=$1
 fi
 
-echo -e "\n== commit code =="
+echo -e "\nGit add"
 git add .
+echo -e "Git commit"
 git commit -m "${parame}"
-echo -e "== commit end ==\n"
+echo -e "\n"
 
-echo "== push Github =="
+echo "Git push Github =="
 git push github master:master
-echo -e "== push Github end ==\n"
-
-echo "== push Gitee =="
+echo "Git push Gitee =="
 git push gitee master:master
-echo -e "== push Gitee end ==\n"
