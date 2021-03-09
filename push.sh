@@ -11,4 +11,3 @@ echo -e "\n# push Github"
 git push github master:master
 echo -e "\n# push Gitee"
 git push gitee master:master
-echo -e "\n"
