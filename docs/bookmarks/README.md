@@ -15,6 +15,11 @@ title: "收藏夹"
 - [Lodash](https://lodash.com/) JavaScript 函数库。
 - [immer.js](https://github.com/immerjs/immer) 便捷修改树形结构的数据（多用于 React 的 setState）。
 
+## MV* 框架
+
+- [Backbone.js](https://github.com/jashkenas/backbone) 基于 jQuery 的 MVC 框架。
+- [Marionette.js](https://github.com/marionettejs/backbone.marionette) 依赖 jQuery 和 Backbone 但兼容性较差。
+
 ## CSS 库
 
 - [styled components](https://styled-components.com/) 在 JS 中混入 CSS 样式（省去定义 CSS 类名的步骤）
