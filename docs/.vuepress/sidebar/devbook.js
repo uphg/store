@@ -7,6 +7,7 @@ module.exports = [
       'often-use-git',                     // 常用 Git 命令清单
       'select-license',                    // 如何选择开源许可证
       'what-is-polyfill',                  // polyfill 为何物
+      'RESTful-API',                       // RESTful API 设计指南
     ]
   },
   {
